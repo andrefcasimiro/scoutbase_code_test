@@ -1,9 +1,6 @@
-import { login, createUser } from '../../../actions/auth'
+import { login, createUser } from '../../../actions/Auth'
 
 export default {
-  Query: {
-
-  },
   Mutation: {
     createUser: (root, args) => {
       return new Promise((resolve, reject) => {

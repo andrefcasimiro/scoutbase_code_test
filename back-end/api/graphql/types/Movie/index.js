@@ -24,11 +24,6 @@ export default `
   type Query {
     getMovieById(id: Int!): Movie
     getMovieByTitle(title: String!): Movie
-    listMovies(filter: ListMoviesFilter): [Movie]
-  }
-
-  input ListMoviesFilter {
-    title: [String!]
-    id: [Int!]
+    listMovies: [Movie]
   }
 `

@@ -1,5 +1,6 @@
 const jsonwebtoken = require('jsonwebtoken')
 import { users } from "../../constants/users"
+import { setAuthorizationHeader } from "../../../index"
 
 /*
   mutation {
@@ -7,7 +8,6 @@ import { users } from "../../constants/users"
       user {
         id
         username
-        email
       }
       token
     }
@@ -40,6 +40,8 @@ export const createUser = args => {
     },
   )
 
+  setAuthorizationHeader(token)
+
   return {
     token,
     user: newUser,
@@ -52,7 +54,6 @@ export const createUser = args => {
       user {
         id
         username
-        email
       }
       token
     }
@@ -80,6 +81,8 @@ export const login = args => {
       expiresIn: '1d',
     },
   )
+
+  setAuthorizationHeader(token)
 
   return {
     token,

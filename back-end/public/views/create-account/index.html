@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Scoutbase Coding Test (Backend)</title>
+  </head>
+
+  <body>
+    <a href="/">Home</a> &nbsp;
+    <span id="loginLink">| &nbsp; <a href="/login">Login</a> &nbsp;</span>
+    <span id="createAccountLink">| &nbsp; <a href="/create-account">Create Account</a> &nbsp;</span>
+    <span id="logoutLink">| &nbsp; <a href="#">Logout</a> &nbsp;</span>
+
+    <h1>Create account</h1>
+    <form id="createAccountForm">
+      <p><strong>Username:</strong></p>
+      <input type="text" name="username" label="username" id="createAccountUsername" />
+      <p><strong>Password:</strong></p>
+      <input type="password" name="password" label="password" id="createAccountPassword" />
+      <button id="createAccountButton">Create account</button>
+    </form>
+
+    <script src="../../scripts/create-account.js"></script>
+    <script src="../../scripts/navbar.js"></script>
+  </body>
+</html>
