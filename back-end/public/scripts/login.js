@@ -1,7 +1,7 @@
-function createAccount() {
+function login() {
   const input = {
-    username: document.querySelector("#createAccountUsername").value,
-    password: document.querySelector("#createAccountPassword").value,
+    username: document.querySelector("#loginUsername").value,
+    password: document.querySelector("#loginPassword").value,
   }
 
   fetch("/graphql", {
@@ -11,8 +11,8 @@ function createAccount() {
       "Accept": "application/json",
     },
     body: JSON.stringify({
-      "query": `mutation createUser {
-        createUser(input: {
+      "query": `mutation login {
+        login(input: {
           username: "${input.username}",
           password: "${input.password}",
         }) {
@@ -26,11 +26,11 @@ function createAccount() {
   })
     .then(res => res.json())
     .then(res => {
-      const result = res && res.data && res.data.createUser
+      const result = res && res.data && res.data.login
       const errors = res && res.errors && res.errors.map(error => error.message)
 
       if (errors) {
-        createAccountErrors.innerHTML = errors.join('')
+        loginErrors.innerHTML = errors.join('')
       }
 
       if (result) {
@@ -45,9 +45,9 @@ function createAccount() {
     })
 }
 
-const createAccountButton = document.querySelector("#createAccountButton");
-const createAccountForm = document.querySelector("#createAccountForm");
-const createAccountErrors = document.querySelector("#errors");
+const loginButton = document.querySelector("#loginButton");
+const loginForm = document.querySelector("#loginForm");
+const loginErrors = document.querySelector("#errors");
 
-createAccountForm.addEventListener("submit", event => event.preventDefault());
-createAccountButton.addEventListener("click", createAccount);
+loginForm.addEventListener("submit", event => event.preventDefault());
+loginButton.addEventListener("click", login);

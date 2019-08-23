@@ -1,19 +1,9 @@
 const jsonwebtoken = require('jsonwebtoken')
-import { users } from "../../constants/users"
-import { setAuthorizationHeader } from "../../../index"
+import { hash, compare } from '../../helpers/bcrypt'
 
-/*
-  mutation {
-    createUser(input:{username:"qe312", password:"1234"}) {
-      user {
-        id
-        username
-      }
-      token
-    }
-  }
-*/
-export const createUser = args => {
+const users = []
+
+export const createUser = async args => {
   const { username, password } = args.input
 
   const user = users.find(user => user.username === username)
@@ -22,10 +12,12 @@ export const createUser = args => {
     throw new Error('User already exists.')
   }
 
+  const hashedPassword = await hash(password)
+
   const newUser = {
     id: users.length + 1,
     username,
-    password,
+    password: hashedPassword, // bcrypt.hash
   }
 
   users.push(newUser)
@@ -40,35 +32,23 @@ export const createUser = args => {
     },
   )
 
-  setAuthorizationHeader(token)
-
   return {
     token,
     user: newUser,
   }
 }
 
-/*
-  mutation {
-    login(input:{username:"user2", password:"4321qwer"}) {
-      user {
-        id
-        username
-      }
-      token
-    }
-  }
-*/
-export const login = args => {
+export const login = async args => {
   const { username, password } = args.input
 
   const user = users.find(user => user.username === username)
 
   if (!user) {
-    throw new Error('Could not find a user with this e-mail.')
+    throw new Error('Could not find an account with this username.')
   }
 
-  if (user.password !== password) {
+  const passwordsMatch = await compare(password, user.password)
+  if (!passwordsMatch) {
     throw new Error('Passwords do not match!')
   }
 
@@ -81,8 +61,6 @@ export const login = args => {
       expiresIn: '1d',
     },
   )
-
-  setAuthorizationHeader(token)
 
   return {
     token,

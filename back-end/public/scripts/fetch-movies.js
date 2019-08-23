@@ -11,8 +11,8 @@ function fetchMovies() {
       "Authorization": token ? `Bearer ${token}` : "",
     },
     body: JSON.stringify({
-      "query": `query listMovies {
-        listMovies {
+      "query": `query movies {
+        movies {
           id
           title
           scoutbase_rating
@@ -34,7 +34,7 @@ function fetchMovies() {
   })
     .then(res => res.json())
     .then(res => {
-      const result = res && res.data && res.data.listMovies
+      const result = res && res.data && res.data.movies
 
       if (result) {
         const content = result.map(result => `

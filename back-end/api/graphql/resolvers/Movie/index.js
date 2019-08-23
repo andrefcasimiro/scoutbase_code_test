@@ -1,10 +1,10 @@
-import { listMovies } from '../../../actions/Movie'
+import { movies } from '../../../actions/Movie'
 
 export default {
   Query: {
-    listMovies: (root, args, ctx) => {
+    movies: (root, args, ctx) => {
       return new Promise((resolve, reject) => {
-        const result = listMovies(ctx)
+        const result = movies(ctx)
 
         if (result && result.error) {
           reject(result.error)

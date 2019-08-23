@@ -1,3 +1,6 @@
+const getRandom = (min, max) =>
+  String(Math.floor(Math.random(min, max) * 10))
+
 const leonardoDiCaprio = {
   name: 'Leonardo DiCaprio',
   birthday: '11/11/1974',
@@ -46,7 +49,7 @@ export const movies = [
     title: 'Titanic',
     year: 1997,
     rating: '78.5%',
-    scoutbase_rating: '78.2%',
+    scoutbase_rating: getRandom(0.5, 0.9),
     actors: [
       {
         ...leonardoDiCaprio,
@@ -59,7 +62,7 @@ export const movies = [
         ...kateWinslet,
         directors: [
           { ...jamesCameron },
-        ]
+        ],
       },
     ],
   },
@@ -68,7 +71,7 @@ export const movies = [
     title: 'Django Unchained',
     year: 2012,
     rating: '90.5%',
-    scoutbase_rating: '88.2%',
+    scoutbase_rating: getRandom(0.5, 0.9),
     actors: [
       {
         ...leonardoDiCaprio,
@@ -81,7 +84,7 @@ export const movies = [
         ...jamieFoxx,
         directors: [
           { ...quentinTarantino },
-        ]
+        ],
       },
     ],
   },
@@ -90,13 +93,13 @@ export const movies = [
     title: 'Donnie Darko',
     year: 2001,
     rating: '80.5%',
-    scoutbase_rating: '92.5%',
+    scoutbase_rating: getRandom(0.5, 0.9),
     actors: [
       {
         ...jakeGyllenhaal,
         directors: [
           { ...richardKelly },
-        ]
+        ],
       },
     ],
   },

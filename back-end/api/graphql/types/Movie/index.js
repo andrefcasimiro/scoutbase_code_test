@@ -22,8 +22,6 @@ export default `
   }
 
   type Query {
-    getMovieById(id: Int!): Movie
-    getMovieByTitle(title: String!): Movie
-    listMovies: [Movie]
+    movies: [Movie]
   }
 `

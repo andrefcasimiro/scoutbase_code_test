@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Scoutbase Coding Test (Backend) - Create an account</title>
+    <title>Scoutbase Coding Test (Backend) - Login</title>
   </head>
 
   <body>
@@ -11,17 +11,17 @@
     <span id="createAccountLink">| &nbsp; <a href="/create-account">Create Account</a> &nbsp;</span>
     <span id="logoutLink">| &nbsp; <a href="#">Logout</a> &nbsp;</span>
 
-    <h1>Create account</h1>
-    <form id="createAccountForm">
+    <h1>Login</h1>
+    <form id="loginForm">
       <p><strong>Username:</strong></p>
-      <input type="text" name="username" label="username" id="createAccountUsername" />
+      <input type="text" name="username" label="username" id="loginUsername" />
       <p><strong>Password:</strong></p>
-      <input type="password" name="password" label="password" id="createAccountPassword" />
-      <button id="createAccountButton">Create account</button>
+      <input type="password" name="password" label="password" id="loginPassword" />
+      <button id="loginButton">Login</button>
       <p id="errors" style="color: red;"></p>
     </form>
 
-    <script src="../../scripts/create-account.js"></script>
+    <script src="../../scripts/login.js"></script>
     <script src="../../scripts/navbar.js"></script>
   </body>
 </html>
