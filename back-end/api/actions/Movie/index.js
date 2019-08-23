@@ -52,5 +52,6 @@ export const listMovies = ctx => {
     title: movie.title,
     actors: movie.actors,
     rating: movie.rating,
+    year: movie.year,
   }))
 }
