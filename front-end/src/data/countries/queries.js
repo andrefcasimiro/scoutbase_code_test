@@ -13,6 +13,7 @@ export const country: Query<Country> = {
         }
         languages {
           name
+          native
         }
         emoji
         currency
@@ -34,6 +35,7 @@ export const countries: Query<Country[]> = {
         }
         languages {
           name
+          native
         }
         emoji
       }

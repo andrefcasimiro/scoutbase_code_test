@@ -1,7 +1,6 @@
 // @flow
 import React from "react"
 import Logo from "../Logo"
-import SecondaryNavbar from "../SecondaryNavbar"
 import Navlinks from "../Navlinks"
 import { appConfig } from "../../global/config"
 import {

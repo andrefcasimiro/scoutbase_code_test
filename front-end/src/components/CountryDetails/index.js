@@ -1,10 +1,6 @@
 // @flow
 import React from "react"
 import { withHandlers } from "recompose"
-import Logo from "../Logo"
-import SecondaryNavbar from "../SecondaryNavbar"
-import Navlinks from "../Navlinks"
-import { appConfig } from "../../global/config"
 import type { Country } from "../../data/countries/types"
 import {
   Section,
@@ -33,7 +29,7 @@ const CountryDetails = ({ country, handleClick }) => (
         <Label>Continent</Label>
         <Section>
           <Content>
-            <h2>{country.continent.name}</h2>
+            <p>{country.continent.name}</p>
           </Content>
         </Section>
       </Item>
@@ -43,6 +39,11 @@ const CountryDetails = ({ country, handleClick }) => (
         <Section>
           <Content>
             <p>{country.languages && country.languages.map(language => language.name).join(', ')}</p>
+          </Content>
+        </Section>
+        <Section>
+          <Content>
+            <p>{country.languages && country.languages.map(language => language.native).join(', ')}</p>
           </Content>
         </Section>
       </Item>

@@ -1,6 +1,5 @@
 // @flow
 import React from "react"
-import { Query } from "react-apollo"
 import withQuery from "../../hocs/withQuery"
 import { countries } from "../../data/countries/queries"
 import type { Country } from "../../data/countries/types"

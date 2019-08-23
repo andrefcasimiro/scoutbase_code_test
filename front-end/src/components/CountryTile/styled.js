@@ -6,7 +6,7 @@ import { mq } from "../../common/mediaQueries"
 export const TileWrap = styled.div`
   display: flex;
   position: relative;
-  width: 70%;
+  width: 80%;
   height: 5rem;
   background: ${theme.color.white};
   flex-direction: row;
@@ -40,7 +40,7 @@ export const Content = styled.div`
   flex-direction: row;
   padding: 0.2rem;
   align-items: center;
-  min-width: 30rem;
+  width: 30rem;
   justify-content: flex-start;
 
   ${mq("max").tablet} {

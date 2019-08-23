@@ -10,7 +10,7 @@ type Props = {|
 const Navlink = ({ children, to }: Props) => {
   const urlParams = window.location.href.split('/')
   const active =
-    urlParams[urlParams.length - 1] === "" && children === 'Home' ||
+    (urlParams[urlParams.length - 1] === "" && children === 'Home') ||
     urlParams[urlParams.length - 1].toLocaleLowerCase() === children.toLocaleLowerCase()
 
   return (

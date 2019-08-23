@@ -11,7 +11,7 @@ type Props = {|
   }>,
 |}
 
-const Navlinks = ({ menu = appConfig.appLinks, language }) => (
+const Navlinks = ({ menu = appConfig.appLinks }: Props) => (
   <Group>
     {Object.values(menu).map((option, index) => {
       return (

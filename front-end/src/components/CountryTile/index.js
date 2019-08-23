@@ -1,10 +1,6 @@
 // @flow
 import React from "react"
 import { withHandlers } from "recompose"
-import Logo from "../Logo"
-import SecondaryNavbar from "../SecondaryNavbar"
-import Navlinks from "../Navlinks"
-import { appConfig } from "../../global/config"
 import type { Country } from "../../data/countries/types"
 import {
   TileWrap,
@@ -33,6 +29,11 @@ const CountryTile = ({ country, handleClick }) => (
       <Content>
         <Paragraph>
           {country.languages && country.languages.map(language => language.name).join(', ')}
+        </Paragraph>
+      </Content>
+      <Content>
+        <Paragraph>
+          {country.languages && country.languages.map(language => language.native).join(', ')}
         </Paragraph>
       </Content>
     </ContentWrap>
