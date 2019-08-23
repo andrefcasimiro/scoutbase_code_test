@@ -32,7 +32,7 @@ app.use('/graphql',
         graphiql: true,
         context: {
           user,
-        }
+        },
       }
     },
   )
