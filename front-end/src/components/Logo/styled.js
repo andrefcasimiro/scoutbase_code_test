@@ -13,4 +13,6 @@ export const LogoContainer = styled.h1`
   ${mq("max").tabletWide} {
     font-size: 4rem;
   }
+
+  cursor: pointer;
 `

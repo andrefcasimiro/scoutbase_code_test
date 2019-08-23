@@ -5,6 +5,7 @@ import theme from "./theme"
 
 export const GlobalStyle = createGlobalStyle`
   html {
+    overflow-x: hidden;
     font-size: 62.5%;
     font-family: 'archivo', 'arial', sans-serif;
   }

@@ -7,7 +7,7 @@ type Props = {|
 |}
 
 const Logo = ({ children }: Props) => (
-  <LogoContainer>
+  <LogoContainer onClick={() => window.location.assign('/')}>
     {children}
   </LogoContainer>
 )

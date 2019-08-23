@@ -8,6 +8,8 @@ const theme = {
   },
   color: {
     primary: "#41B3A3",
+    primaryDark: "#3da99a",
+    primaryLight: "#56c2b4",
     white: "#FFF",
   },
 }
