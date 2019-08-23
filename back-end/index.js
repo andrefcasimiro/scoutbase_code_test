@@ -4,6 +4,7 @@ const jwt = require('express-jwt')
 const decode = require('jwt-decode')
 const path = require('path')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 import schema from './api/graphql'
 
 const port = 4000
@@ -14,6 +15,14 @@ const auth = jwt({
   secret: 'secretKey',
   credentialsRequired: false,
 })
+
+// Allow external clients to make requests to our API. Could be a whitelist.
+const corsOptions = {
+  origin: 'http://localhost:4000',
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions))
 
 app.use('/graphql',
   auth,
