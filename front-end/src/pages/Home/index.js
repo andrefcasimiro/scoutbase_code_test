@@ -4,7 +4,6 @@ import { Link } from "../../componentsStyled/Typography"
 import {
   Group,
   Item,
-  Label,
   Section,
 } from "../../componentsStyled/Layout"
 
