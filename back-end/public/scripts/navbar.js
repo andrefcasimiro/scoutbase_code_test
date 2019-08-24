@@ -15,7 +15,6 @@ if (sessionStorage.getItem("token")) {
 function logout() {
   sessionStorage.removeItem("token")
 
-  console.log('session storage: ', sessionStorage)
   window.location.assign('/')
 }
 
