@@ -17,21 +17,31 @@ export const TileWrap = styled.div`
   margin: 0.2rem 0;
 
   ${mq("max").tabletWide} {
-    width: 90%;
-    height: 100%;
-  }
-
-  ${mq("max").tablet} {
     width: 100%;
     height: 100%;
   }
 
-  &:hover {
-    transform: translateY(-0.5rem);
-    box-shadow: 0 1rem 5rem 0 rgba(0,0,0,0.2);
-    position: relative;
-    cursor: pointer;
-    border-bottom: 0.5rem solid ${theme.color.primary};
+  ${mq("min").tabletWide} {
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 1rem 5rem 0 rgba(0,0,0,0.2);
+      position: relative;
+      cursor: pointer;
+      border-bottom: 0.5rem solid ${theme.color.primary};
+    }
+  }
+`
+
+export const ContentWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+
+
+  ${mq("max").tablet} {
+    justify-content: space-evenly;
+    flex-direction: column;
   }
 `
 
@@ -53,24 +63,4 @@ export const Content = styled.div`
 export const Section = styled.div`
   display: flex;
   margin: 0 1rem;
-`
-
-export const Paragraph = styled.p`
-  color: grey;
-  display: flex;
-  align-items: center;
-  margin-left: 0.5rem;
-`
-
-export const ContentWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-
-
-  ${mq("max").tablet} {
-    justify-content: space-evenly;
-    flex-direction: column;
-  }
 `

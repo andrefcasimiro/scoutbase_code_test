@@ -10,6 +10,6 @@ export const Container = styled.div`
 
 export const FullWidthWrapper = styled.div`
   display: flex;
-  width: 100vw;
+  width: 100%;
   justify-content: center;
 `

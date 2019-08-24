@@ -2,12 +2,12 @@
 import React from "react"
 import { withHandlers } from "recompose"
 import type { Country } from "../../data/countries/types"
+import { Paragraph } from "../../componentsStyled/Typography"
 import {
   TileWrap,
   Content,
   ContentWrap,
   Section,
-  Paragraph,
 } from "./styled"
 
 type Props = {|

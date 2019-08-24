@@ -17,12 +17,16 @@ type Props = {|
 
 const CountryDetails = ({ country, handleClick }) => (
   <Wrapper>
-    <Label>Country</Label>
-    <Section>
-      <Content>
-        <h2>{country.emoji} &nbsp; {country.name}</h2>
-      </Content>
-    </Section>
+    <Group>
+      <Item>
+        <Label>Country</Label>
+        <Section>
+          <Content>
+            <h2>{country.emoji} &nbsp; {country.name}</h2>
+          </Content>
+        </Section>
+      </Item>
+    </Group>
 
     <Group>
       <Item>
