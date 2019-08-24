@@ -2,12 +2,16 @@
 import React from "react"
 import { withHandlers } from "recompose"
 import type { Country } from "../../data/countries/types"
+import Button from "../../componentsStyled/Button"
+import Caret from "../../componentsStyled/Caret"
 import {
-  Section,
-  Content,
   Label,
+  Section,
   Group,
   Item,
+} from "../../componentsStyled/Layout"
+import {
+  Content,
   Wrapper,
 } from "./styled"
 
@@ -15,7 +19,7 @@ type Props = {|
   country: Country,
 |}
 
-const CountryDetails = ({ country, handleClick }) => (
+const CountryDetails = ({ country, handleClick, handleBack }) => (
   <Wrapper>
     <Group>
       <Item>
@@ -45,7 +49,7 @@ const CountryDetails = ({ country, handleClick }) => (
             <p>{country.languages && country.languages.map(language => language.name).join(', ')}</p>
           </Content>
         </Section>
-        <Section>
+        <Section fullRadius>
           <Content>
             <p>{country.languages && country.languages.map(language => language.native).join(', ')}</p>
           </Content>
@@ -70,13 +74,18 @@ const CountryDetails = ({ country, handleClick }) => (
         </Section>
       </Item>
     </Group>
+
+    <Button onClick={handleBack}><Caret /> Go back to countries</Button>
   </Wrapper>
 )
 
 const enhancer: HOC<*, Props> = withHandlers({
   handleClick: props => () => {
     return window.location.assign(`/countries/${props.country.code}`)
-  }
+  },
+  handleBack: props => () => {
+    return window.location.assign(`/countries`)
+  },
 })
 
 export default enhancer(CountryDetails)

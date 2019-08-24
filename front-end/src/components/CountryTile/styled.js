@@ -15,6 +15,7 @@ export const TileWrap = styled.div`
   transition: .2s all;
   box-shadow: 0 1rem 5rem 0 rgba(0,0,0,0.05);
   margin: 0.2rem 0;
+  border-radius: 1rem;
 
   ${mq("max").tabletWide} {
     width: 100%;
