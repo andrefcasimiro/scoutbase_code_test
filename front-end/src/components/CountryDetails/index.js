@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import { withHandlers } from "recompose"
 import type { Country } from "../../data/countries/types"

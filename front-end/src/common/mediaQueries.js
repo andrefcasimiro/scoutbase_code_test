@@ -1,4 +1,3 @@
-// @flow
 import { map } from "ramda"
 
 export const breakpoints = {

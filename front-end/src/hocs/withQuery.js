@@ -1,4 +1,3 @@
-// @flow
 import { graphql } from "react-apollo"
 import { compose, type Component } from "recompose"
 import { always } from "ramda"

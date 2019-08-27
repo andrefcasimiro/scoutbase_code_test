@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import withQuery from "../../hocs/withQuery"
 import { countries } from "../../data/countries/queries"

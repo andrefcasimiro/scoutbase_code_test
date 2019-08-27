@@ -1,4 +1,3 @@
-// @flow
 const theme = {
   zIndices: {
     productTiles: 1,

@@ -1,4 +1,3 @@
-// @flow
 import { createGlobalStyle } from "styled-components"
 import { defaultFont } from "./config"
 import theme from "./theme"

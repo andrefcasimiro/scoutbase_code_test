@@ -1,4 +1,3 @@
-// @flow
 import React from "react"
 import Group from "../../componentsStyled/Group"
 import Navlink from "./Navlink"

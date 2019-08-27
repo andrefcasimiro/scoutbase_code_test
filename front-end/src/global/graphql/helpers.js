@@ -1,4 +1,3 @@
-// @flow
 import { path, identity, isNil } from "ramda"
 import type { Query, Mutation } from "./types"
 import client from "./apolloClient"

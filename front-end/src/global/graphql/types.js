@@ -1,4 +1,3 @@
-// @flow
 export type Query = {
   gql: any,
   selector?: string[],
